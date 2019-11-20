@@ -83,7 +83,12 @@ const tabHome = createStackNavigator({
 );
 
 const tabExplore = createStackNavigator({
-    Explore: {screen: ExploreScreen}
+        Explore: ExploreScreen,
+        Restaurant: Restaurants,
+        tokyoList: Tokyo,
+        osakaList: Osaka,
+        kanagawaList: Kanagawa,
+        kyotoList: Kyoto
 },
 {
     defaultNavigationOptions: defaultStackNavOptions
@@ -106,118 +111,37 @@ const tabProfile = createStackNavigator({
 }
 );
 
-const food = createStackNavigator({
-    Food:{screen: MyFood,
-        headerTitle: 'My Food',
-        backgroundColor: 'white',
-        fontFamily: 'open-sans',
-        fontSize:12 }
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const fashion = createStackNavigator({
-    Fashion: {screen:  MyFashion,
-        headerTitle: 'My Fashion',
-        backgroundColor: 'white',
-        fontFamily: 'open-sans',
-        fontSize:12}
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const medicine = createStackNavigator({
-    Medicine: {screen: MyMedicine,
-        headerTitle: 'My Medicine',
-        backgroundColor: 'white',
-        fontFamily: 'open-sans',
-        fontSize:12}
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const mosque = createStackNavigator({
-    Mosque: {screen: MyMosque,
-        headerTitle: 'My Mosque',
-        backgroundColor: 'white',
-        fontFamily: 'open-sans',
-        fontSize:12}
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const restaurant = createStackNavigator({
-    Restaurant: Restaurants
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const tokyolist = createStackNavigator({
-    tokyoList: Tokyo
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const osakalist = createStackNavigator({
-    osakaList: Osaka
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const kanagawalist = createStackNavigator({
-    kanagawaList: Kanagawa
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
-const kyotolist = createStackNavigator({
-    kyotoList: Kyoto
-},
-{
-    defaultNavigationOptions: defaultStackNavOptions
-})
-
 const restdetail = createStackNavigator({
     restaurantDetail: RestaurantDetail
 })
 
+
 const MealsFavTabNavigator = createBottomTabNavigator({
-    HomePage:{
-        screen: tabHome,
-        navigationOptions: {
-            tabBarLabel: 'Home',
-            tabBarIcon: tabInfo => {
-                return (
-                <Ionicons 
-                name="ios-home" 
-                size={25} 
-                color={tabInfo.tintColor}
-                />);
-            }
-        }
+    HomePage:{screen: tabHome,
+                navigationOptions: {
+                    tabBarLabel: 'Home',
+                    tabBarIcon: tabInfo => {
+                        return (
+                        <Ionicons 
+                        name="ios-home" 
+                        size={25} 
+                        color={tabInfo.tintColor}
+                        />);
+                    }
+                }
+                
     },
-    ExplorePage: {
-        screen: tabExplore,
-        navigationOptions: {
-            tabBarLabel: 'Explore',
-            tabBarIcon: tabInfo => {
-                return (
-                <Ionicons 
-                name="ios-search"
-                size={25} 
-                color={tabInfo.tintColor}
-                />);
-            }
-        }
-    },
+    Explore:{ screen: tabExplore,
+                navigationOptions: {
+                tabBarLabel: 'Explore',
+                tabBarIcon: tabInfo => {
+                    return (
+                    <Ionicons 
+                    name="ios-search"
+                    size={25} 
+                    color={tabInfo.tintColor}
+                    />);}}
+                     },
     AboutPage: {
         screen: tabAbout,
         navigationOptions: {
@@ -249,17 +173,21 @@ const MealsFavTabNavigator = createBottomTabNavigator({
 
 },
 {
+    defaultNavigationOptions: defaultStackNavOptions
+},
+{
     tabBarOptions: {
     activeTintColor: Colors.primaryColor
 }
 });
 
-const headerTabNavigator = createMaterialTopTabNavigator({
-    myfood:food,
-    myfashion:fashion,
-    mymedicine: medicine,
-    mymosque: mosque
-})
+
+// const headerTabNavigator = createMaterialTopTabNavigator({
+//     myfood:Food,
+//     myfashion:Fashion,
+//     mymedicine: Medicine,
+//     mymosque: Mosque
+// })
 
 const MainNavigator = createDrawerNavigator(
     {
@@ -268,14 +196,7 @@ const MainNavigator = createDrawerNavigator(
     exploreTab: tabExplore,
     aboutTab: tabAbout,
     withTab: MealsFavTabNavigator,
-    tabNav: headerTabNavigator,
-    rest: restaurant,
-    tokyo: tokyolist,
-    osaka: osakalist,
-    kanagawa: kanagawalist,
-    kyoto: kyotolist,
     restaurantdetail: restdetail
-    
 },
 { //tak berfungsi
     contentOptions: {
