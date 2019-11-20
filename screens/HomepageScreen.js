@@ -13,7 +13,7 @@ const HomepageScreen = props => {
         title={itemData.item.title}
         imageUrl={itemData.item.imageUrl}
         onSelect={() => {
-            props.navigation.navigate({ routeName: 'ExplorePage',
+            props.navigation.navigate({ routeName: 'Explore',
             params: {
                 categoryId: itemData.item.id
             }
