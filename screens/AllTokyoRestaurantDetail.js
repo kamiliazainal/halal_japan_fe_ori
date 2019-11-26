@@ -10,7 +10,7 @@ import { Button } from 'react-native-elements';
 import Osaka from '../prefectures/Osaka';
 
 
-class RestaurantDetail extends Component {
+class AllTokyoRestaurantDetail extends Component {
 
     constructor(props){
         super(props)
@@ -29,8 +29,8 @@ class RestaurantDetail extends Component {
 
         let minX, maxX, minY, maxY, lat ,long ,latdelta, longdelta ;
 
-        let points = [{latitude: JSON.parse(navigation.getParam('Latitude', 'default value')), 
-                        longitude: JSON.parse(navigation.getParam('Longitude', 'default value'))}]  //format dia dlm bentuk = [{ latitude: 28.779660, longitude: 77.421110 }, ...., ....]
+        let points = [{latitude: JSON.parse(navigation.getParam('T_Latitude', 'default value')), 
+                        longitude: JSON.parse(navigation.getParam('T_Longitude', 'default value'))}]  //format dia dlm bentuk = [{ latitude: 28.779660, longitude: 77.421110 }, ...., ....]
       
         // init first point
         minX = points[0].latitude;
@@ -56,18 +56,28 @@ class RestaurantDetail extends Component {
         long = midY
         latdelta= deltaX
         longdelta = deltaY
+
+        // mythis.setState({region:{  
+        //   latitude: midX,   
+        //   longitude: midY,  
+        //   latitudeDelta: deltaX,  
+        //   longitudeDelta: deltaY,  
+        // }})
+
+        //console.log(MainImage)
         return (
             <ScrollView  style={styles.screen}>
-                <ImageBackground style={styles.image1} source={{uri: navigation.getParam('MainImage','some default value')}}>
+                <ImageBackground style={styles.image1} source={{uri: navigation.getParam('T_MainImage','some default value')}}>
                     <View style={styles.screen2}>
-                    <Text style={styles.text1}>{navigation.getParam('Names', 'default value')}</Text>
-                    <Text style={styles.text2} >{navigation.getParam('Areas', 'default value')}</Text>
-                    <Text style={styles.text2}>Types: {navigation.getParam('Types', 'default value')}</Text>
+                    <Text style={styles.text1}>{navigation.getParam('T_Name', 'default value')}</Text>
+                    <Text style={styles.text2} >{navigation.getParam('T_Area', 'default value')}</Text>
+                    <Text style={styles.text2}>Types: {navigation.getParam('T_Type', 'default value')}</Text>
                     <View style={styles.screen3}>
                         <Button title="Bookmark"></Button>
                         <Button title="Check in"></Button>
                         <Button title="Add Review"></Button>
                         <Button title="Add Photo"></Button>
+                        {/* <Button title="Discount"></Button> */}
                     </View>
                     </View>
                 </ImageBackground>
@@ -75,14 +85,18 @@ class RestaurantDetail extends Component {
                     <Text style={styles.text1}>Info</Text>
                     <View style={styles.section}>
                     <Text style={styles.text3}>Type of Cuisines</Text>
-                    <Text style={styles.text2}>{navigation.getParam('Cuisines', 'default value')}</Text>
+                    <Text style={styles.text2}>{navigation.getParam('T_Cuisine', 'default value')}</Text>
                     <Text style={styles.text3}>Phone Number</Text>
-                    <Text style={styles.text2}>{navigation.getParam('Mobile', 'default value')}</Text>
+                    <Text style={styles.text2}>{navigation.getParam('T_Mobile', 'default value')}</Text>
                     <Text style={styles.text3}>Address</Text>
-                    <Text style={styles.text2}>{navigation.getParam('Addresses', 'default value')}</Text>
+                    <Text style={styles.text2}>{navigation.getParam('T_Address', 'default value')}</Text>
                         <MapView 
                         provider = {PROVIDER_GOOGLE}
                         style={styles.mapStyle}  
+                        // showsUserLocation={false}  
+                        // zoomEnabled={true}  
+                        // zoomControlEnabled={false}  
+                        //customMapStyle ={ RetroMapStyles }
                         region ={{
                             latitude: lat,
                             longitude: long,
@@ -94,10 +108,10 @@ class RestaurantDetail extends Component {
                         <Marker     
                         key={marker.key}      
                         coordinate={{
-                            latitude: JSON.parse(navigation.getParam('Latitude', 'default value')),
-                            longitude: JSON.parse(navigation.getParam('Longitude', 'default value'))
+                            latitude: JSON.parse(navigation.getParam('T_Latitude', 'default value')),
+                            longitude: JSON.parse(navigation.getParam('T_Longitude', 'default value'))
                         }}
-                        title={navigation.getParam('Names', 'default value')}
+                        title={navigation.getParam('T_Name', 'default value')}
                                 />
                             ))}
                         </MapView>
@@ -198,11 +212,21 @@ class RestaurantDetail extends Component {
                     <SliderBox sliderBoxHeight={200}
                     parentWidth={318}
                     images={[
-                         navigation.getParam('Menus1','some default value'),
-                         navigation.getParam('Menus2','some default value'),
-                         navigation.getParam('Menus3','some default value'),
-                         navigation.getParam('Menus4','some default value')
+                         navigation.getParam('T_Menu1','some default value'),
+                         navigation.getParam('T_Menu2','some default value'),
+                         navigation.getParam('T_Menu3','some default value'),
+                         navigation.getParam('T_Menu4','some default value')
                     ]} />
+                        {/* <View style={styles.dropdown4}>
+                            <View style={styles.dropdown3}>
+                                <View style={styles.dropdown6}>
+                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus1','some default value')}}></Image>
+                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus2','some default value')}}></Image>
+                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus3','some default value')}}></Image>
+                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus4','some default value')}}></Image>
+                                </View>
+                            </View>
+                        </View> */}
                     </View>
 
                     <Text style={styles.text1}>Review</Text>
@@ -259,7 +283,7 @@ class RestaurantDetail extends Component {
 }
 
 
-RestaurantDetail.navigationOptions = (props) => {
+AllTokyoRestaurantDetail.navigationOptions = (props) => {
     return {
         headerTransparent: {position: 'absolute',
         backgroundColor: 'transparent',
@@ -270,7 +294,7 @@ RestaurantDetail.navigationOptions = (props) => {
     headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item title='Back'
             iconName='md-arrow-back'
-            onPress={() => {props.navigation.navigate({routeName: 'Restaurant'})}}
+            onPress={() => {props.navigation.goBack()}}
         />
     </HeaderButtons>
     }
@@ -291,6 +315,7 @@ const styles = StyleSheet.create({
         alignContent: 'stretch'
     },
     container: {
+        //marginTop: -120,
         padding: 15
     },
     image: {
@@ -360,4 +385,4 @@ const styles = StyleSheet.create({
       }
 })
 
-export default withNavigation(RestaurantDetail);
+export default withNavigation(AllTokyoRestaurantDetail);

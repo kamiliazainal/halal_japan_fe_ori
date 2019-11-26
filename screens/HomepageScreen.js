@@ -44,19 +44,6 @@ const HomepageScreen = props => {
     );
 };
 
-HomepageScreen.navigationOptions = {
-        headerTitle: 'Halal Map',
-        headerRight: (<HeaderButtons HeaderButtonComponent={HeaderButton}>
-            <Item 
-                title= 'search'
-                iconName= 'md-search'
-                onPress={() => {
-                    
-                }}
-            />
-        </HeaderButtons>)
-};
-
 
 const styles = StyleSheet.create({
     screen: {
