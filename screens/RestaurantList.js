@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Image, FlatList, ScrollView, Button, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, ScrollView, Button, TouchableOpacity, ActivityIndicator} from 'react-native';
 import axios from 'axios';
 import { SliderBox } from 'react-native-image-slider-box';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
@@ -155,7 +155,7 @@ class RestaurantList extends Component {
         }
             />
             
-            
+            <ActivityIndicator size='large' color={Colors.primaryColor} style={justifyContent='center', alignItems='center'}/>
         </ScrollView>
         )}
     }
