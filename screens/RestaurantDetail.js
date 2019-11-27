@@ -56,18 +56,19 @@ class RestaurantDetail extends Component {
         long = midY
         latdelta= deltaX
         longdelta = deltaY
+
         return (
             <ScrollView  style={styles.screen}>
                 <ImageBackground style={styles.image1} source={{uri: navigation.getParam('MainImage','some default value')}}>
                     <View style={styles.screen2}>
                     <Text style={styles.text1}>{navigation.getParam('Names', 'default value')}</Text>
-                    <Text style={styles.text2} >{navigation.getParam('Areas', 'default value')}</Text>
-                    <Text style={styles.text2}>Types: {navigation.getParam('Types', 'default value')}</Text>
+                    <Text style={styles.text5} >{navigation.getParam('Areas', 'default value')}</Text>
+                    <Text style={styles.text5}>Types: {navigation.getParam('Types', 'default value')}</Text>
                     <View style={styles.screen3}>
                         <Button title="Bookmark"></Button>
                         <Button title="Check in"></Button>
-                        <Button title="Add Review"></Button>
-                        <Button title="Add Photo"></Button>
+                        <Button title="Review"></Button>
+                        <Button title="Photo"></Button>
                     </View>
                     </View>
                 </ImageBackground>
@@ -203,6 +204,7 @@ class RestaurantDetail extends Component {
                          navigation.getParam('Menus3','some default value'),
                          navigation.getParam('Menus4','some default value')
                     ]} />
+                        
                     </View>
 
                     <Text style={styles.text1}>Review</Text>
@@ -291,6 +293,7 @@ const styles = StyleSheet.create({
         alignContent: 'stretch'
     },
     container: {
+        //marginTop: -120,
         padding: 15
     },
     image: {
@@ -305,7 +308,13 @@ const styles = StyleSheet.create({
     text1: {
         fontFamily: 'open-sans-bold',
         fontSize: 20,
-        paddingTop: 10
+        paddingTop: 10,
+        color: 'white',
+    },
+    text5:{
+        fontFamily: 'open-sans-bold',
+        fontSize: 12,
+        color: 'white'
     },
     text3: {
         fontFamily: 'open-sans-bold',
