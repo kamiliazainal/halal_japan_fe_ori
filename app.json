@@ -1,13 +1,12 @@
 {
   "expo": {
-    "name": "Halal-v1",
-    "slug": "halal-v1",
+    "name": "Halal Map",
+    "slug": "halal-map",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -25,6 +24,18 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android":{
+      "package":"halal.map",
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAxlX9aIjJ1wS2mOwXWytXbi1KgYYqaUWo"
+        }
+      },
+      "permissions": ["ACCESS_FINE_LOCATION"]
+
+
     }
   }
 }
