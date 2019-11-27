@@ -12,7 +12,7 @@ const LandingpageScreen = props => {
                 <View style={styles.button}>
                     <Button title="Login" 
                     onPress={() =>{
-                        props.navigation.replace({routeName: 'Loginpage'});
+                        // props.navigation.replace({routeName: 'Loginpage'});
                         }}
                     />
                 </View>
@@ -25,7 +25,7 @@ const LandingpageScreen = props => {
                     type="clear"
                     title="Browse as guest" 
                     onPress={() =>{
-                        props.navigation.navigate({routeName: 'Homepage'});
+                        props.navigation.navigate({routeName: 'HomePage'});
                         }} />
             </View>
         </View>
