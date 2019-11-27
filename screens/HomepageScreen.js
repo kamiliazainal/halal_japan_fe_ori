@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList, Button } from 'react-native';
-import { HeaderButtons,Item } from 'react-navigation-header-buttons';
-import HeaderButton from '../components/HeaderButton';
+import {  StyleSheet, FlatList } from 'react-native';
 import { CATEGORIES } from '../data/dummy-data';
 import CategoryGridTile from '../components/CategoryGridTile';
 
@@ -20,6 +18,36 @@ const HomepageScreen = props => {
         });
         }}
         />)
+           }
+           else if (itemData.item.id =="c5"){
+               return (
+                <CategoryGridTile 
+                title={itemData.item.title}
+                imageUrl={itemData.item.imageUrl}
+                onSelect={() => {
+                    props.navigation.navigate({ routeName: 'ProfilePage',
+                    params: {
+                        categoryId: itemData.item.id
+                    }
+                });
+                }}
+                />
+               )
+           }
+           else if (itemData.item.id=="c6"){
+               return (
+                <CategoryGridTile 
+                title={itemData.item.title}
+                imageUrl={itemData.item.imageUrl}
+                onSelect={() => {
+                    props.navigation.navigate({ routeName: 'AboutPage',
+                    params: {
+                        categoryId: itemData.item.id
+                    }
+                });
+                }}
+                />
+               )
            }
            else {
         return <CategoryGridTile 
@@ -43,7 +71,6 @@ const HomepageScreen = props => {
         />
     );
 };
-
 
 const styles = StyleSheet.create({
     screen: {

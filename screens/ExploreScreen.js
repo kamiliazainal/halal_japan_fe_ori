@@ -4,6 +4,8 @@ import { Dropdown } from 'react-native-material-dropdown';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import axios from 'axios';
 
+import LocationPicker from '../components/LocationPicker'
+
 
 class ExploreScreen extends Component {
 
@@ -205,11 +207,13 @@ LatLongArr.forEach(x => {
                     arr: this.state.data
 
                     }})} } 
-                    />
+                     />
             </View>
+                    <LocationPicker/>
+           
             <Text style={styles.title}>Explore the Halal Hub</Text>
             <View style={styles.screen2}>
-             <MapView 
+            <MapView 
                         provider = {PROVIDER_GOOGLE}
                         style={styles.mapStyle}  
                         region ={{
@@ -354,10 +358,12 @@ const styles = StyleSheet.create({
        paddingHorizontal: 20
     },
     search: {
-        alignSelf: 'center',
-        width: '30%',
-        paddingVertical: 10
-    },
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: '100%',
+    },button: {
+        width: '10%'
+      },
     title: {
         fontFamily: 'open-sans-bold',
         fontSize: 20,
@@ -365,7 +371,6 @@ const styles = StyleSheet.create({
         paddingVertical: 10
     },
     section: {
-        //borderWidth: 1,
         paddingVertical: 10,
         backgroundColor: '#f7f9fa',
         flex: 1,
@@ -413,7 +418,7 @@ const styles = StyleSheet.create({
       },
       text1: {
           fontFamily: 'open-sans',
-          fontSize: 10
+          fontSize: 8
       },
       mapStyle: {
         width: '100%',

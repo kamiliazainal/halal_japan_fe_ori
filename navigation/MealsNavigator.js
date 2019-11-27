@@ -10,6 +10,7 @@ import MapEateryTokyo from '../components/MapEateryTokyo';
 
 import BottomTabNavigator from '../navigation/BottomTabNavigator';
 import TopTabNavigator from '../navigation/TopTabNavigator';
+import MapPreview from '../components/MapPreview'
 
 const defaultStackNavOptions ={
     headerTitle: 'Halal Map',
@@ -56,7 +57,8 @@ const MainNavigator = createStackNavigator(
         },
         top: TopTabNavigator,
         bottom: BottomTabNavigator,
-        restaurantDetail: RestaurantDetail
+        restaurantDetail: RestaurantDetail,
+        map: MapPreview
 },
 {
     defaultNavigationOptions: defaultStackNavOptions

@@ -57,27 +57,18 @@ class AllTokyoRestaurantDetail extends Component {
         latdelta= deltaX
         longdelta = deltaY
 
-        // mythis.setState({region:{  
-        //   latitude: midX,   
-        //   longitude: midY,  
-        //   latitudeDelta: deltaX,  
-        //   longitudeDelta: deltaY,  
-        // }})
-
-        //console.log(MainImage)
         return (
             <ScrollView  style={styles.screen}>
                 <ImageBackground style={styles.image1} source={{uri: navigation.getParam('T_MainImage','some default value')}}>
                     <View style={styles.screen2}>
                     <Text style={styles.text1}>{navigation.getParam('T_Name', 'default value')}</Text>
-                    <Text style={styles.text2} >{navigation.getParam('T_Area', 'default value')}</Text>
-                    <Text style={styles.text2}>Types: {navigation.getParam('T_Type', 'default value')}</Text>
+                    <Text style={styles.text5} >{navigation.getParam('T_Area', 'default value')}</Text>
+                    <Text style={styles.text5}>Types: {navigation.getParam('T_Type', 'default value')}</Text>
                     <View style={styles.screen3}>
                         <Button title="Bookmark"></Button>
                         <Button title="Check in"></Button>
-                        <Button title="Add Review"></Button>
-                        <Button title="Add Photo"></Button>
-                        {/* <Button title="Discount"></Button> */}
+                        <Button title="Review"></Button>
+                        <Button title="Photo"></Button>
                     </View>
                     </View>
                 </ImageBackground>
@@ -93,10 +84,6 @@ class AllTokyoRestaurantDetail extends Component {
                         <MapView 
                         provider = {PROVIDER_GOOGLE}
                         style={styles.mapStyle}  
-                        // showsUserLocation={false}  
-                        // zoomEnabled={true}  
-                        // zoomControlEnabled={false}  
-                        //customMapStyle ={ RetroMapStyles }
                         region ={{
                             latitude: lat,
                             longitude: long,
@@ -217,16 +204,6 @@ class AllTokyoRestaurantDetail extends Component {
                          navigation.getParam('T_Menu3','some default value'),
                          navigation.getParam('T_Menu4','some default value')
                     ]} />
-                        {/* <View style={styles.dropdown4}>
-                            <View style={styles.dropdown3}>
-                                <View style={styles.dropdown6}>
-                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus1','some default value')}}></Image>
-                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus2','some default value')}}></Image>
-                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus3','some default value')}}></Image>
-                                    <Image style={styles.image} source={{uri: navigation.getParam('Menus4','some default value')}}></Image>
-                                </View>
-                            </View>
-                        </View> */}
                     </View>
 
                     <Text style={styles.text1}>Review</Text>
@@ -315,7 +292,6 @@ const styles = StyleSheet.create({
         alignContent: 'stretch'
     },
     container: {
-        //marginTop: -120,
         padding: 15
     },
     image: {
@@ -330,7 +306,13 @@ const styles = StyleSheet.create({
     text1: {
         fontFamily: 'open-sans-bold',
         fontSize: 20,
-        paddingTop: 10
+        paddingTop: 10,
+        color: 'white',
+    },
+    text5:{
+        fontFamily: 'open-sans-bold',
+        fontSize: 12,
+        color: 'white'
     },
     text3: {
         fontFamily: 'open-sans-bold',

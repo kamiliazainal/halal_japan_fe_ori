@@ -27,13 +27,13 @@ const topp = createMaterialTopTabNavigator ({
 const tabExplore = createSwitchNavigator ({
         top:topp,
         Explore: ExploreScreen,
+        Restaurant:Restaurants,
+        restaurantlist:RestaurantList,
         tokyoList: Tokyo,
         osakaList: Osaka,
         kanagawaList: Kanagawa,
         kyotoList: Kyoto,
-        Restaurant:Restaurants,
-        restaurantlist:RestaurantList,
-        alltokyorestaurantdetail: AllTokyoRestaurantDetail
+        alltokyorestaurantdetail: AllTokyoRestaurantDetail  
 });
 
 const BottomTab = createBottomTabNavigator({

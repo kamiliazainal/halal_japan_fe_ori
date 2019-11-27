@@ -30,12 +30,12 @@ const defaultStackNavOptions ={
 
 const tabExplore = createSwitchNavigator ({
     Explore: ExploreScreen,
+    Restaurant:Restaurants,
+    restaurantlist:RestaurantList,
     tokyoList: Tokyo,
     osakaList: Osaka,
     kanagawaList: Kanagawa,
     kyotoList: Kyoto,
-    Restaurant:Restaurants,
-    restaurantlist:RestaurantList,
     alltokyorestaurantdetail: AllTokyoRestaurantDetail
 });
 

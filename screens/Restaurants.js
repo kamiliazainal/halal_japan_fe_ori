@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
       },
       text1: {
           fontFamily: 'open-sans',
-          fontSize: 10
+          fontSize: 8
       },
       mapStyle: {
         width: '100%',
