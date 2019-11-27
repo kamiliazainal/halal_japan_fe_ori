@@ -73,7 +73,7 @@ class AllTokyoRestaurantDetail extends Component {
                     </View>
                 </ImageBackground>
                 <View style={styles.container}>
-                    <Text style={styles.text1}>Info</Text>
+                    <Text style={styles.text6}>Info</Text>
                     <View style={styles.section}>
                     <Text style={styles.text3}>Type of Cuisines</Text>
                     <Text style={styles.text2}>{navigation.getParam('T_Cuisine', 'default value')}</Text>
@@ -103,7 +103,7 @@ class AllTokyoRestaurantDetail extends Component {
                             ))}
                         </MapView>
                     </View>
-                    <Text style={styles.text1}>Facilities</Text>
+                    <Text style={styles.text6}>Facilities</Text>
                     <View style={styles.section}>
                     <View style={styles.dropdown4}>
                      <View style={styles.dropdown3}>
@@ -187,14 +187,14 @@ class AllTokyoRestaurantDetail extends Component {
             </View>
                     </View>
 
-                    <Text style={styles.text1}>About Restaurant</Text>
+                    <Text style={styles.text6}>About Restaurant</Text>
                     <View style={styles.section}>
                     <Text style={styles.text2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                     when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
                     </View>
 
-                    <Text style={styles.text1}>Menu</Text>
+                    <Text style={styles.text6}>Menu</Text>
                     <View style={styles.section}>
                     <SliderBox sliderBoxHeight={200}
                     parentWidth={318}
@@ -206,7 +206,7 @@ class AllTokyoRestaurantDetail extends Component {
                     ]} />
                     </View>
 
-                    <Text style={styles.text1}>Review</Text>
+                    <Text style={styles.text6}>Review</Text>
                     <View style={styles.section}>
                     <View style={styles.section2}>
                     <Text style={styles.text3}>John Doe</Text>
@@ -243,12 +243,12 @@ class AllTokyoRestaurantDetail extends Component {
                     <Button type= "clear" title="Read More"/>
                     </View>
                     
-                    <Text style={styles.text1}>You may like</Text>
+                    <Text style={styles.text6}>You may like</Text>
                     <View style={styles.section}>
                     <Osaka />
                     </View>
                     <View style={styles.section3}>
-                    <Text style={styles.text1}>Is this your restaurant ?</Text>
+                    <Text style={styles.text6}>Is this your restaurant ?</Text>
                     <Button title="Claim" />
                     </View>
 
@@ -308,6 +308,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         paddingTop: 10,
         color: 'white',
+    },
+    text6: {
+        fontFamily: 'open-sans-bold',
+        fontSize: 20,
+        paddingTop: 10,
     },
     text5:{
         fontFamily: 'open-sans-bold',
