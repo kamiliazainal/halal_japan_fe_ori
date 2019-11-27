@@ -86,7 +86,7 @@ constructor(props){
           keyExtractor={this.keyExtractor}
           renderItem={this.renderListOfTokyoRestaurant}
         />
-        <Button onPress={() => this.props.navigation.navigate('ListOfRestaurant')} color="grey" title="See More"/>
+        {/* <Button onPress={() => this.props.navigation.navigate('ListOfRestaurant')} color="grey" title="See More"/> */}
       </View>
     );
   }
