@@ -11,7 +11,7 @@ constructor(props){
     data: []
   };}
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchData();
   }
 

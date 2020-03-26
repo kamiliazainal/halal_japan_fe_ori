@@ -18,7 +18,7 @@ class MapPreview extends Component {
             key:"1"   
           }]
       };}
-      componentWillMount() {
+      componentDidMount() {
         this.fetchData();
       }
     

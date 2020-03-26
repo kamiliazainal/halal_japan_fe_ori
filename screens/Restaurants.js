@@ -38,7 +38,7 @@ class Restaurant extends Component {
         };
      }
 
-     componentWillMount() {
+     componentDidMount() {
         this.fetchData();
       }
     

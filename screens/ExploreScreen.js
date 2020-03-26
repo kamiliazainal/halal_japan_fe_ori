@@ -34,7 +34,7 @@ class ExploreScreen extends Component {
      }
 
 
-     componentWillMount() {
+     componentDidMount() {
         this.fetchData();
       }
     
